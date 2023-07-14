@@ -1,0 +1,19 @@
+.carousel{
+    height: 70vh;
+    width: 100vw;
+}
+
+.carousel-inner{
+    height: 100%;
+    width: 100%;
+}
+
+.carousel-item{
+    height: 100%;
+    width: 100%;
+}
+
+.d-block{
+    height: 100%;
+    width: 100%;
+}

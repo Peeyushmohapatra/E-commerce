@@ -1,0 +1,43 @@
+.contact{
+    height: 75.1vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.contactHeading{
+    height: 20%;
+    width: 70%;
+    margin-top: 1.5rem;
+}
+
+.contactHeading h1{
+    text-align: center;
+}
+
+.contactForm{
+    height: 80%;
+    width: 70%;
+    display: flex;
+}
+
+.leftContact{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rightContact{
+    height: 100%;
+    width: 50%;
+}
+
+.leftContact img{
+    height: 75%;
+    width: 60%;
+}
+
+

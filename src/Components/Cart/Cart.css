@@ -1,0 +1,68 @@
+.cartDiv{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.finalItemContainer{
+    margin-top: 20px;
+    background-color: rgb(248,249,250);
+    display: flex;
+    height: 300px;
+    width: 90%;   
+    border-radius: 10px;
+}
+
+.leftContainer1{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.leftContainer1 img{
+    height: 60%;
+    width: 30%;
+}
+
+.rightContainer1{
+    height: 100%;
+    width: 50%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    padding: 0 1rem;
+}
+
+.absolute{
+    position: absolute;
+    top: 1%;
+    right: 1%;
+    cursor: pointer;
+}
+
+.countContainer{
+    height: 15%;
+    width: 25%;
+    display: flex;
+    gap: 20px;
+}
+
+.plus{
+    height: 100%;
+    width: 25%;
+    border: 1px solid gray;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: gray;
+    cursor: pointer;
+}
+

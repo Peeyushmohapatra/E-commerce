@@ -1,0 +1,23 @@
+.productsContainer{
+    width: 100%;
+    padding: 3rem 7rem;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.headingContainer{
+    height: 10vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.headingContainer h1{
+    text-align: center;
+}
+
+@media screen and (width <= 500px){
+    .productsContainer{
+        padding: 1rem 1rem;
+    }
+}

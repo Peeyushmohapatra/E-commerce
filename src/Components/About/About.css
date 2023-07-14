@@ -1,0 +1,41 @@
+.about{
+    height: 75.1vh;
+    width: 100%;
+    display: flex;
+}
+
+.leftSection{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 1.5rem;
+}
+
+.leftSection a{
+    height: 12%;
+    width: 20%;
+}
+
+.leftSection a button{
+    height: 100%;
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    border: 1px solid gray;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.rightSection{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.rightSection img{
+    height: 65%;
+    width: 50%;
+}
