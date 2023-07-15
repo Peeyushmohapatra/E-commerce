@@ -9,6 +9,8 @@ import Cart from "./Components/Cart/Cart";
 import Footer from "./Components/Footer/Footer";
 import About from "./Components/About/About";
 import Contact from "./Components/ContactUs/Contact";
+import Login from "./Components/Login/Login";
+import Register from "./Components/Register/Register";
 
 
 function App() {
@@ -21,6 +23,8 @@ function App() {
         <Route path="/products" element={<> <Products/></>} />
         <Route path="/about" element={<> <About/></>} />
         <Route path="/contact" element={<> <Contact/></>} />
+        <Route path="/register" element={<> <Register/></>} />
+        <Route path="/login" element={<> <Login/></>} />
         <Route path="/productdetails/:id" element={<><Productdetails/></>} />
         <Route path="/cart" element={<Cart/>} />
       </Routes>

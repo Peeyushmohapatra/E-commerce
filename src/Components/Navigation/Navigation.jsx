@@ -39,8 +39,12 @@ const Navigation = () => {
             </Link>
           </Nav>
           <Form className="d-flex">
+            <Link to="/login">
             <Button variant="outline-success"><i class="fa-solid fa-right-to-bracket"></i> Login</Button>
+            </Link>
+            <Link to="/register">
             <Button variant="outline-success">Register</Button>
+            </Link>
             <Link to="cart">
             <Button variant="outline-success"><i class="fa-solid fa-cart-shopping"></i> {inCart.length}</Button>
             </Link>

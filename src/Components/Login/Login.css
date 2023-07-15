@@ -1,0 +1,17 @@
+.login{
+    height: 75.1vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.innerLoginContainer{
+    height: 70%;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+    border-radius: 7px;
+    padding: 1rem 2rem;
+}

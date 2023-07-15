@@ -1,4 +1,4 @@
-export const reducer = (state={product:[],dataToShow:[],inCart:[]},action) => {
+export const reducer = (state={product:[],dataToShow:[],inCart:[],isLoggin:false},action) => {
     if(action.type === "products"){
         return {
             ...state,
