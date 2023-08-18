@@ -25,7 +25,7 @@ export const reducer = (state={product:[],dataToShow:[],inCart:[],isLoggin:false
             console.log("Hello2");
             let boolean = false
             for(let i=0; i<state.inCart.length; i++){
-                console.log(state.inCart[i].id == action.data.id);
+                // console.log(state.inCart[i].id == action.data.id);
                 if(state.inCart[i].id == action.data.id){
                     boolean = true
                 }
@@ -42,6 +42,12 @@ export const reducer = (state={product:[],dataToShow:[],inCart:[],isLoggin:false
         return {
             ...state,
             inCart:action.data
+        }
+    }
+    else if(action.type === "is-login"){
+        return {
+            ...state,
+            isLoggin:action.data
         }
     }
     return state

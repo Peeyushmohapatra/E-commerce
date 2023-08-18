@@ -20,7 +20,7 @@ const Productslist = () => {
 
   
 
-  const notify = () => toast("Added To Cart");
+  const notify = () => toast("Item added to cart");
 
   return (
     <div className="listContainer">
