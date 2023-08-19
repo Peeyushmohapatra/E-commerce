@@ -54,3 +54,11 @@
 a{
     text-decoration: none;
   }
+
+  .Toastify__toast-body{
+    width: 100%;
+  }
+
+  .Toastify__close-button{
+    width: 10%;
+  }

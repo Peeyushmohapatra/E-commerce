@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import "./Products.css";
 import Filterdetails from "../Filterdetails/Filterdetails";
 import Productslist from "../ProductsList/Productslist";
@@ -18,4 +18,4 @@ const Products = () => {
   );
 };
 
-export default Products;
+export default memo(Products);

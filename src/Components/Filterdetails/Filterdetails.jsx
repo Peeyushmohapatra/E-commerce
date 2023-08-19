@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { memo, useEffect, useState } from "react";
 import "./Filterdetails.jsx.css";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
@@ -106,4 +106,4 @@ const Filterdetails = () => {
   );
 };
 
-export default Filterdetails;
+export default memo(Filterdetails);

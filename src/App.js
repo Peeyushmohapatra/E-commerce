@@ -13,28 +13,36 @@ import Login from "./Components/Login/Login";
 import Register from "./Components/Register/Register";
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
+import Logincomp from "./Components/Logincomp";
 
 
 function App() {
-  const [isLogin,setLogin] = useState("")
+      
 
-   
+  const [state,setState] = useState(false)  
+  const [isLogin,setLogin] = useState(JSON.parse(localStorage.getItem("isLogin")))
+  useEffect(() => {
+    isLogin === true ? localStorage.setItem("isLogin",JSON.stringify(true)) : localStorage.setItem("isLogin",JSON.stringify(false))
+  },[])
   
   return (
     <div className="App">
-      <Navigation isLogin={isLogin} setLogin={setLogin} />
+      {isLogin ? <Navigation isLogin={isLogin} state={state} setState={setState} setLogin={setLogin}/> : null}
 
       <Routes>
-        <Route path="/" element={isLogin === "" ? <Login setLogin={setLogin}/> : <><Slider/> <Products/></>} />
-        <Route path="/products" element={isLogin === "" ? <Login setLogin={setLogin}/> : <Products/>} />
-        <Route path="/about" element={isLogin === "" ? <Login setLogin={setLogin}/> : <About/>} />
-        <Route path="/contact" element={isLogin === "" ? <Login setLogin={setLogin}/> : <Contact/>} />
+        <Route path="/" element={isLogin === false ? <Login setLogin={setLogin}/> : <><Slider/> <Products/></>} />
+        <Route path="/products" element={isLogin === false ? <Login setLogin={setLogin}/> : <Products/>} />
+        <Route path="/about" element={isLogin === false ? <Login setLogin={setLogin}/> : <About/>} />
+        <Route path="/contact" element={isLogin === false ? <Login setLogin={setLogin}/> : <Contact/>} />
         <Route path="/register" element={<> <Register/></>} />
         <Route path="/login" element={<> <Login setLogin={setLogin}/></>} />
-        <Route path="/productdetails/:id" element={ isLogin === "" ? <><Login setLogin={setLogin}/></> : <Productdetails/>} />
-        <Route path="/cart" element={isLogin === "" ? <Login setLogin={setLogin}/> : <Cart/>} />
+        <Route path="/productdetails/:id" element={ isLogin === false ? <><Login setLogin={setLogin}/></> : <Productdetails/>} />
+        <Route path="/cart" element={isLogin === false ? <Login setLogin={setLogin}/> : <Cart/>} />
       </Routes>
-      <Footer/>
+      
+
+      {isLogin ? <Footer/>: null}
+      {/* <Logincomp/> */}
     </div>
   );
 }

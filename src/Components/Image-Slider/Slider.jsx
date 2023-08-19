@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import "./Slider.css";
 import Carousel from "react-bootstrap/Carousel";
 import { carouselList } from "../../Essentials/Carousellist";
@@ -29,4 +29,4 @@ const Slider = () => {
   );
 };
 
-export default Slider;
+export default memo(Slider);

@@ -1,4 +1,4 @@
-import React, { useReducer } from "react";
+import React, { memo, useReducer } from "react";
 import "./Productslist.css";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
@@ -60,4 +60,4 @@ const Productslist = () => {
   );
 };
 
-export default Productslist;
+export default memo(Productslist);

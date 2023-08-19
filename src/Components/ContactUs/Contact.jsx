@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import "./Contact.css";
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
@@ -44,4 +44,4 @@ const Contact = () => {
   );
 };
 
-export default Contact;
+export default memo(Contact);

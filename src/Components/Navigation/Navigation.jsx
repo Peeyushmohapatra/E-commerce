@@ -1,18 +1,22 @@
-import React from 'react'
+import React, {  useEffect, useState } from 'react'
 import "./Navigation.css"
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 import { useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 
-const Navigation = ({isLogin,setLogin}) => {
+const Navigation = ({isLogin,setState,state,setLogin}) => {
   const {inCart} = useSelector((state) => {
     return state
   })
+  const [useData,setUserdata] = useState("")
+
+  useEffect(() => {
+    setUserdata(JSON.parse(localStorage.getItem("user-data")))
+  },[])
 
   const navigate = useNavigate()
   return (
@@ -39,18 +43,21 @@ const Navigation = ({isLogin,setLogin}) => {
             <Link to="/contact">
             <Nav.Link href="#action2">Contact</Nav.Link>
             </Link>
-          </Nav>
+            
+            </Nav>
           <Form className="d-flex">
           {isLogin ? <Button onClick={() => {
-              setLogin(false)
+              
+            localStorage.removeItem("user-data")
+              setLogin(localStorage.setItem("isLogin",JSON.stringify(false)))
               navigate("/login")
-              localStorage.clear()
+             
             }} variant="outline-success"><i class="fa-solid fa-right-to-bracket"></i> Logout</Button> :<Link to="/login">
             <Button variant="outline-success"><i class="fa-solid fa-right-to-bracket"></i> Login</Button>
             </Link>}
-            <Link to="/register">
+            {!isLogin ? <Link to="/register">
             <Button variant="outline-success">Register</Button>
-            </Link>
+            </Link> : null}
             <Link to="cart">
             <Button variant="outline-success"><i class="fa-solid fa-cart-shopping"></i> {inCart.length}</Button>
             </Link>

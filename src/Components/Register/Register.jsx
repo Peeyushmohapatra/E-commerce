@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { memo, useState } from "react";
 import "./Register.css";
 import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
@@ -23,24 +23,56 @@ const Register = () => {
     password:""
   })
 
+  function validateEmailPassword(data){
+    let symbol1 = 0;
+    let symbol2 = 0;
+
+    for(let i=0; i<data.email.length; i++){
+        let ch = data.email[i];
+        if(ch === "@"){
+          symbol1++
+        }
+        if(ch === "."){
+          symbol2++
+        }
+    }
+
+    if(symbol1 !== 1 || symbol2 !== 1){
+      return "@ & . use once only"
+    }
+
+    if(data.password.length < 4){
+      return "password should greater than 3"
+    }
+  }
+
   function validate(data){
     if(data.username === "" || data.name === "" || data.email === "" || data.password === ""){
       alert("All Field is required !!")
       return
     }else{
-      localStorage.setItem("user-data",JSON.stringify(data))
-      notify()
-      navigate("/login")
-    
+      if(validateEmailPassword(data) === "@ & . use once only"){
+        alert("@ & . use once only")
+        return
+      }
+      else if(validateEmailPassword(data) === "password should greater than 3"){
+        alert("password should greater than 3")
+        return
+      }else{
+        localStorage.setItem("user-data",JSON.stringify(data))
+        notify()
+        navigate("/login")
+      }
+      
     }
-    // console.log(data);
   }
 
 
 
   return (
-    <div className="registerContainer">
-      <div className="innerRegisterContainer">
+    <div className="login_box_container">
+    <section>
+    <div className="innerRegisterContainer">
         <div className="innerUpperContainer">
           <h5>
             <b>Join our Community!</b>
@@ -92,17 +124,17 @@ const Register = () => {
 
             <Row className="mb-3"></Row>
             <ToastContainer autoClose={1000} position="top-center" />
-            <Button onClick={() => {
+            
+            <button onClick={() => {
               // validate(data)
               validate(data)
-            }} variant="primary" type="submit">
-              Submit
-            </Button>
+            }} >Submit</button>
           </Form>
         </div>
       </div>
-    </div>
+    </section>
+  </div>
   );
 };
 
-export default Register;
+export default memo(Register);

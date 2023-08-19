@@ -1,4 +1,4 @@
-import React, { useEffect, useReducer, useState } from "react";
+import React, { memo, useEffect, useReducer, useState } from "react";
 import "./Productdetails.css";
 import { Link, useParams } from "react-router-dom";
 import Skeleton from "react-loading-skeleton";
@@ -98,4 +98,4 @@ const Productdetails = () => {
   );
 };
 
-export default Productdetails;
+export default memo(Productdetails);
