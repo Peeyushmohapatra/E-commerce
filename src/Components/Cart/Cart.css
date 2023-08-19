@@ -66,3 +66,12 @@
     cursor: pointer;
 }
 
+
+.button_container{
+    height: 60px;
+    display: flex;
+}
+
+.btn{
+    height: 100%;
+}

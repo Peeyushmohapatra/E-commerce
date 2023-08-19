@@ -1,4 +1,4 @@
-export const reducer = (state={product:[],dataToShow:[],inCart:[],isLoggin:false},action) => {
+export const reducer = (state={product:[],dataToShow:[],inCart:[],itemCount:[]},action) => {
     if(action.type === "products"){
         return {
             ...state,
@@ -44,11 +44,12 @@ export const reducer = (state={product:[],dataToShow:[],inCart:[],isLoggin:false
             inCart:action.data
         }
     }
-    else if(action.type === "is-login"){
+    else if(action.type === "item_counts"){
         return {
             ...state,
-            isLoggin:action.data
+            itemCount:action.data
         }
     }
+    
     return state
 }

@@ -1,0 +1,75 @@
+.payment_container{
+    width: 100%;
+    display: flex;
+    padding: 30px;
+    padding-left: 50px;
+}
+
+
+.left_payment_container{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+}
+.right_payment_container{
+    width: 40%;
+    padding: 30px;
+}
+
+.card_data_container{
+    width: 50%;
+}
+
+.last_button{
+    height: 30px;
+
+}
+
+.btn-secondary{
+    height: 100%;
+    background-color: black;
+    color: white;
+}
+
+.h4{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.rounded-pill {
+    border-radius: 50rem!important;
+    border-radius: var(--bs-border-radius-pill)!important;
+}
+
+.text-primary {
+    --bs-text-opacity: 1;
+    color: rgba(13,110,253,var(--bs-text-opacity))!important;
+    color: rgba(var(--bs-primary-rgb),var(--bs-text-opacity))!important;
+}
+
+
+.badge {
+    --bs-badge-padding-x: 0.65em;
+    --bs-badge-padding-y: 0.35em;
+    --bs-badge-font-size: 0.75em;
+    --bs-badge-font-weight: 700;
+    --bs-badge-color: #fff;
+    --bs-badge-border-radius: var(--bs-border-radius);
+    border-radius: var(--bs-badge-border-radius);
+    color: var(--bs-badge-color);
+    display: inline-block;
+    font-size: var(--bs-badge-font-size);
+    font-weight: var(--bs-badge-font-weight);
+    line-height: 1;
+    padding: var(--bs-badge-padding-y) var(--bs-badge-padding-x);
+    text-align: center;
+    vertical-align: initial;
+    white-space: nowrap;
+}
+
+.bg-primary {
+    --bs-bg-opacity: 1;
+    background-color: rgba(13,110,253,var(--bs-bg-opacity))!important;
+    background-color: rgba(var(--bs-primary-rgb),var(--bs-bg-opacity))!important;
+}

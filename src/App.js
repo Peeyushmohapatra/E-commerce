@@ -14,6 +14,7 @@ import Register from "./Components/Register/Register";
 import { useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import Logincomp from "./Components/Logincomp";
+import Payment from "./Components/Payment/Payment";
 
 
 function App() {
@@ -38,11 +39,15 @@ function App() {
         <Route path="/login" element={<> <Login setLogin={setLogin}/></>} />
         <Route path="/productdetails/:id" element={ isLogin === false ? <><Login setLogin={setLogin}/></> : <Productdetails/>} />
         <Route path="/cart" element={isLogin === false ? <Login setLogin={setLogin}/> : <Cart/>} />
+        <Route path="/payment" element={isLogin === false ? <Login setLogin={setLogin}/> : <Payment/>} />
       </Routes>
       
 
       {isLogin ? <Footer/>: null}
+
       {/* <Logincomp/> */}
+      {/* <Payment/> */}
+      {/* <Cart/> */}
     </div>
   );
 }
