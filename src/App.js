@@ -28,24 +28,21 @@ function App() {
       <Navigation isLogin={isLogin}  setLogin={setLogin}/>
 
       <Routes>
-        <Route path="/" element={<><Slider/> <Products/></>} />
-        <Route path="/products" element={<Products/>} />
-        <Route path="/about" element={<About/>} />
-        <Route path="/contact" element={<Contact/>} />
+        <Route path="/" element={<><Slider/> <Products/><Footer/></>} />
+        <Route path="/products" element={<><Products/><Footer/></>} />
+        <Route path="/about" element={<><About/><Footer/></>} />
+        <Route path="/contact" element={<><Contact/><Footer/></>} />
         <Route path="/register" element={<> <Register/></>} />
-        <Route path="/login" element={<> <Login setLogin={setLogin}/></>} />
-        <Route path="/productdetails/:id" element={<><Productdetails/></>} />
-        <Route path="/cart" element={isLogin === false ? <Login setLogin={setLogin}/> : <Cart/>} />
-        <Route path="/payment" element={isLogin === false ? <Login setLogin={setLogin}/> : <Payment/>} />
+        <Route path="/login" element={<><Login setLogin={setLogin}/></>} />
+        <Route path="/productdetails/:id" element={<><Productdetails/><Footer/></>} />
+        <Route path="/cart" element={isLogin === false ? <Login setLogin={setLogin}/> : <><Cart/><Footer/></>} />
+        <Route path="/payment" element={isLogin === false ? <Login setLogin={setLogin}/> : <><Payment/><Footer/></>} />
         {/* <Route path="/" element={isLogin === false ? <Login setLogin={setLogin}/> : <><Slider/> <Products/></>} /> */}
         {/* <Route path="/products" element={isLogin === false ? <Login setLogin={setLogin}/> : <Products/>} /> */}
         {/* <Route path="/about" element={isLogin === false ? <Login setLogin={setLogin}/> : <About/>} /> */}
         {/* <Route path="/contact" element={isLogin === false ? <Login setLogin={setLogin}/> : <Contact/>} /> */}
         {/* <Route path="/productdetails/:id" element={ isLogin === false ? <><Login setLogin={setLogin}/></> : <Productdetails/>} /> */}
       </Routes>
-      
-
-      {isLogin ? <Footer/> : null}
 
 
     </div>
