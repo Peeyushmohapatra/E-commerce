@@ -1,4 +1,4 @@
-import React, { memo, useEffect, useReducer, useState } from "react";
+import React, { memo, useEffect, useState } from "react";
 import "./Productdetails.css";
 import { Link, useParams } from "react-router-dom";
 import Skeleton from "react-loading-skeleton";
@@ -17,6 +17,7 @@ const Productdetails = () => {
   const state = useSelector((state) => {
     return state.product;
   });
+
 
   useEffect(() => {
     getItem(id);
@@ -40,7 +41,7 @@ const Productdetails = () => {
       {data !== "" ? (
         data.map((item) => {
           return (
-            <div className="proctDetailsPage">
+            <div key={item.id} className="proctDetailsPage">
               <div className="leftContainer">
                 <img src={item.image} alt="" />
               </div>
@@ -49,7 +50,7 @@ const Productdetails = () => {
                 <br />
                 <h1>{item.title}</h1>
                 <br />
-                <h6>{Math.floor(item.rating.rate) == 5 ? "⭐⭐⭐⭐⭐" : Math.floor(item.rating.rate) == 4 ? "⭐⭐⭐⭐" : Math.floor(item.rating.rate) == 3 ? "⭐⭐⭐" : Math.floor(item.rating.rate) == 2 ? "⭐⭐" : "⭐"}</h6>
+                <h6>{Math.floor(item.rating.rate) === 5 ? "⭐⭐⭐⭐⭐" : Math.floor(item.rating.rate) === 4 ? "⭐⭐⭐⭐" : Math.floor(item.rating.rate) === 3 ? "⭐⭐⭐" : Math.floor(item.rating.rate) === 2 ? "⭐⭐" : "⭐"}</h6>
                 <br />
                 <h1><b>$ {item.price}</b></h1>
                 <br />

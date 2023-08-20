@@ -1,7 +1,6 @@
 import React, { memo } from "react";
 import "./Contact.css";
 import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
 
 const Contact = () => {
   return (
@@ -37,7 +36,7 @@ const Contact = () => {
               <Form.Control as="textarea" rows={3} />
             </Form.Group>
           </Form>
-          <Button variant="outline-primary">Send Message</Button>{' '}
+          <button className="send_message">Send Message</button>
         </div>
       </div>
     </div>

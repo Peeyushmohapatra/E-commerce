@@ -1,5 +1,5 @@
 .contact{
-    height: 75.1vh;
+    height: 80.1vh;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -40,4 +40,15 @@
     width: 60%;
 }
 
+
+.send_message{
+    height: 15%;
+    border: 2px solid rgb(43,114,253);
+    color: rgb(43,114,253);
+}
+
+.send_message:hover{
+    background-color: rgb(43,114,253);
+    color: white;
+}
 

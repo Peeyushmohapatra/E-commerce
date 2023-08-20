@@ -158,11 +158,12 @@ const Payment = () => {
         <div>
           <ListGroup as="ul">
             {inCart &&
-              inCart.map((item) => {
+              inCart.map((item,idx) => {
                 let sum = item.price * itemCount[(item.id)-1]
                 ref.current = ref.current+sum
                 return (
                   <ListGroup.Item
+                  key={idx}
                     as="li"
                     className="d-flex justify-content-between align-items-start"
                   >

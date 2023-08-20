@@ -1,4 +1,4 @@
-import React, { memo, useReducer } from "react";
+import React, { memo } from "react";
 import "./Productslist.css";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
@@ -36,7 +36,7 @@ const Productslist = () => {
               <h4>
                 <b>$ {item.price}</b>
               </h4>
-              <h6>{Math.floor(item.rating.rate) == 5 ? "⭐⭐⭐⭐⭐" : Math.floor(item.rating.rate) == 4 ? "⭐⭐⭐⭐" : Math.floor(item.rating.rate) == 3 ? "⭐⭐⭐" : Math.floor(item.rating.rate) == 2 ? "⭐⭐" : "⭐"}</h6>
+              <h6>{Math.floor(item.rating.rate) === 5 ? "⭐⭐⭐⭐⭐" : Math.floor(item.rating.rate) === 4 ? "⭐⭐⭐⭐" : Math.floor(item.rating.rate) === 3 ? "⭐⭐⭐" : Math.floor(item.rating.rate) === 2 ? "⭐⭐" : "⭐"}</h6>
               <button  onClick={() => {
                 notify()
                 addToCart(item,dispatch)

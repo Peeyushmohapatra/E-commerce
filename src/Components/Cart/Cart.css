@@ -1,9 +1,11 @@
 .cartDiv{
     width: 100%;
+    height: 71.7vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 30px;
+    overflow: auto;
 }
 
 .finalItemContainer{

@@ -19,3 +19,12 @@
     display: flex;
     gap: 20px;
 }
+
+.navbar-brand{
+    display: flex;
+    
+}
+
+#site_logo{
+    width: 15%;
+}

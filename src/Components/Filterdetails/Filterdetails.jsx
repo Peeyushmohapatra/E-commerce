@@ -86,18 +86,14 @@ const Filterdetails = () => {
                   setForm(e.target.value);
                 }}
                 type="search"
-                placeholder="Search"
+                placeholder="🔍 Here !!!"
                 className="me-2"
                 aria-label="Search"
               />
-              <Button
-                onClick={() => {
+             
+              <Button onClick={() => {
                   searchFunction(form, dispatch, state);
-                }}
-                variant="outline-success"
-              >
-                Search
-              </Button>
+                }} variant="outline-danger">Search</Button>
             </Form>
           </Navbar.Collapse>
         </Container>

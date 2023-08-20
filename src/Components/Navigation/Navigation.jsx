@@ -1,4 +1,4 @@
-import React, {  useEffect, useState } from 'react'
+import React, {  memo, useEffect, useState } from 'react'
 import "./Navigation.css"
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
@@ -7,6 +7,9 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { useSelector } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
+import Logo from "../../Images/Logo.png"
+import Dropdown from 'react-bootstrap/Dropdown';
+
 
 const Navigation = ({isLogin,setState,state,setLogin}) => {
   const {inCart} = useSelector((state) => {
@@ -23,7 +26,11 @@ const Navigation = ({isLogin,setState,state,setLogin}) => {
     <div>
          <Navbar expand="lg" className="bg-body-tertiary">
       <Container fluid>
-        <Navbar.Brand href="#">Navbar scroll</Navbar.Brand>
+        <Navbar.Brand href="#">
+          <img onClick={() => {
+            navigate("/")
+          }} id='site_logo' src={Logo} alt="" />
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -46,15 +53,23 @@ const Navigation = ({isLogin,setState,state,setLogin}) => {
             
             </Nav>
           <Form className="d-flex">
-          {isLogin ? <Button onClick={() => {
-              
-            localStorage.removeItem("user-data")
-              setLogin(localStorage.setItem("isLogin",JSON.stringify(false)))
-              navigate("/login")
-             
-            }} variant="outline-success"><i class="fa-solid fa-right-to-bracket"></i> Logout</Button> :<Link to="/login">
+          {isLogin ?  <Dropdown>
+      <Dropdown.Toggle variant="success" id="dropdown-basic">
+        🙏🏻 {useData.name} Mohapatra
+      </Dropdown.Toggle>
+
+      <Dropdown.Menu>
+        <Dropdown.Item onClick={() => {
+           localStorage.removeItem("user-data")
+           setLogin(localStorage.setItem("isLogin",JSON.stringify(false)))
+           navigate("/login")
+        }} href="#/action-1">Logout</Dropdown.Item>
+      </Dropdown.Menu>
+    </Dropdown> :<Link to="/login">
             <Button variant="outline-success"><i class="fa-solid fa-right-to-bracket"></i> Login</Button>
             </Link>}
+
+            
             {!isLogin ? <Link to="/register">
             <Button variant="outline-success">Register</Button>
             </Link> : null}
@@ -71,4 +86,13 @@ const Navigation = ({isLogin,setState,state,setLogin}) => {
   )
 }
 
-export default Navigation
+export default memo(Navigation)
+
+
+{/* <Button onClick={() => {
+              
+              localStorage.removeItem("user-data")
+                setLogin(localStorage.setItem("isLogin",JSON.stringify(false)))
+                navigate("/login")
+               
+              }} variant="outline-success"><i class="fa-solid fa-right-to-bracket"></i> Logout</Button> */}

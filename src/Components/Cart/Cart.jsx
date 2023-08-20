@@ -1,4 +1,4 @@
-import React, { memo, useEffect, useRef, useState } from "react";
+import React, { memo, useRef, useState } from "react";
 import "./Cart.css";
 import { useDispatch, useSelector } from "react-redux";
 import Button from "react-bootstrap/Button";
@@ -11,6 +11,7 @@ const Cart = () => {
   const ref = useRef([
     1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
   ]);
+
   const { inCart } = useSelector((state) => {
     return state;
   });
@@ -31,7 +32,7 @@ const Cart = () => {
       {inCart
         ? inCart.map((item) => {
             return (
-              <div className="finalItemContainer">
+              <div key={item.id} className="finalItemContainer">
                 <div className="leftContainer1">
                   <img src={item.image} alt="" />
                 </div>
