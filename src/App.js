@@ -45,7 +45,7 @@ function App() {
       </Routes>
       
 
-      <Footer/>
+      {isLogin ? <Footer/> : null}
 
 
     </div>
