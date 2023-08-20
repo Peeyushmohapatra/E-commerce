@@ -3,6 +3,7 @@ import "./Cart.css";
 import { useDispatch, useSelector } from "react-redux";
 import Button from "react-bootstrap/Button";
 import { useNavigate } from "react-router-dom";
+import Empty from "../../Images/Emptycart.png"
 
 const Cart = () => {
   const [state, setState] = useState(false);
@@ -29,8 +30,10 @@ const Cart = () => {
 
   return (
     <div className="cartDiv">
-      {inCart
-        ? inCart.map((item) => {
+      {inCart.length !== 0
+        ? 
+        <>
+       { inCart.map((item) => {
             return (
               <div key={item.id} className="finalItemContainer">
                 <div className="leftContainer1">
@@ -76,10 +79,8 @@ const Cart = () => {
                 </div>
               </div>
             );
-          })
-        : ""}
-
-      <div className="button_container">
+          })}
+<div className="button_container">
         <Button
           onClick={() => {
             dispatch({
@@ -93,6 +94,13 @@ const Cart = () => {
           Proceed To Checkout
         </Button>
       </div>
+        </>
+        : <div className="empty_cart_container">
+          <img src={Empty} alt="" />
+          <h1>Your cart is empty!</h1>
+          </div>}
+
+      
     </div>
   );
 };

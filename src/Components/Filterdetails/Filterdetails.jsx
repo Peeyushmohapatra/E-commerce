@@ -6,32 +6,20 @@ import Form from "react-bootstrap/Form";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import { useDispatch, useSelector } from "react-redux";
-import { searchFunction, setData } from "../../Essentials/Carousellist";
+import { Productslist, searchFunction, setData } from "../../Essentials/Carousellist";
 
 
 const Filterdetails = () => {
+  const [form, setForm] = useState("");
   const dispatch = useDispatch();
-  const [toShow, setToShow] = useState("all");
   const state = useSelector((state) => {
     return state.product;
   });
 
-  const [form, setForm] = useState("");
 
   useEffect(() => {
-    Productslist();
+    Productslist(dispatch);
   }, []);
-
-  async function Productslist() {
-    const api = await fetch("https://fakestoreapi.com/products");
-    const response = await api.json();
-    dispatch({
-      type: "products",
-      data: response,
-    });
-  }
-
-  
 
   return (
     <div>

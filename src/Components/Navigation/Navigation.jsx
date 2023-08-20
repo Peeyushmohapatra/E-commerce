@@ -11,7 +11,7 @@ import Logo from "../../Images/Logo.png"
 import Dropdown from 'react-bootstrap/Dropdown';
 
 
-const Navigation = ({isLogin,setState,state,setLogin}) => {
+const Navigation = ({isLogin,setLogin}) => {
   const {inCart} = useSelector((state) => {
     return state
   })
@@ -20,6 +20,10 @@ const Navigation = ({isLogin,setState,state,setLogin}) => {
   useEffect(() => {
     setUserdata(JSON.parse(localStorage.getItem("user-data")))
   },[])
+
+  function reload(){
+    window.location.reload()
+  }
 
   const navigate = useNavigate()
   return (
@@ -55,14 +59,14 @@ const Navigation = ({isLogin,setState,state,setLogin}) => {
           <Form className="d-flex">
           {isLogin ?  <Dropdown>
       <Dropdown.Toggle variant="success" id="dropdown-basic">
-        🙏🏻 {useData.name} Mohapatra
+        🙏🏻 {useData ? useData.name : "Welcome"}
       </Dropdown.Toggle>
 
       <Dropdown.Menu>
         <Dropdown.Item onClick={() => {
            localStorage.removeItem("user-data")
            setLogin(localStorage.setItem("isLogin",JSON.stringify(false)))
-           navigate("/login")
+           reload()
         }} href="#/action-1">Logout</Dropdown.Item>
       </Dropdown.Menu>
     </Dropdown> :<Link to="/login">
@@ -89,10 +93,3 @@ const Navigation = ({isLogin,setState,state,setLogin}) => {
 export default memo(Navigation)
 
 
-{/* <Button onClick={() => {
-              
-              localStorage.removeItem("user-data")
-                setLogin(localStorage.setItem("isLogin",JSON.stringify(false)))
-                navigate("/login")
-               
-              }} variant="outline-success"><i class="fa-solid fa-right-to-bracket"></i> Logout</Button> */}

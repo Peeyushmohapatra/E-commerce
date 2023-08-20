@@ -27,7 +27,7 @@ const Productslist = () => {
       {state.length !== 0 ? (
         state.map((item) => {
           return (
-            <div className="item">
+            <div key={item.id} className="item">
               <img
                 src={item.image}
                 alt=""

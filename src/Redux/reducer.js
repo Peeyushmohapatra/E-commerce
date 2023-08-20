@@ -7,7 +7,6 @@ export const reducer = (state={product:[],dataToShow:[],inCart:[],itemCount:[]},
         }
     }
     else if(action.type === "data-to-show"){
-        console.log(action.data);
         return {
             ...state,
             dataToShow:action.data
@@ -15,14 +14,12 @@ export const reducer = (state={product:[],dataToShow:[],inCart:[],itemCount:[]},
     }
     else if(action.type === "add-to-cart"){
         if(state.inCart.length === 0){
-            console.log("Hello");
             return {
                 ...state,
                 inCart:[action.data]
             }
         }
         else if(state.inCart.length !== 0){
-            console.log("Hello2");
             let boolean = false
             for(let i=0; i<state.inCart.length; i++){
                 // console.log(state.inCart[i].id == action.data.id);

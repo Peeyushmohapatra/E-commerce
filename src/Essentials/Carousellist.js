@@ -103,3 +103,13 @@ export function setData(data,dispatch,state){
       data:item
     })
   } 
+
+
+  export async function Productslist(dispatch) {
+    const api = await fetch("https://fakestoreapi.com/products");
+    const response = await api.json();
+    dispatch({
+      type: "products",
+      data: response,
+    });
+  }

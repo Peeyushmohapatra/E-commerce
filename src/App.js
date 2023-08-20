@@ -16,18 +16,16 @@ import Payment from "./Components/Payment/Payment";
 
 
 function App() {
-      
-
-  const [state,setState] = useState(false)  
+       
   const [isLogin,setLogin] = useState(JSON.parse(localStorage.getItem("isLogin")))
   useEffect(() => {
     isLogin === true ? localStorage.setItem("isLogin",JSON.stringify(true)) : localStorage.setItem("isLogin",JSON.stringify(false))
-  },[])
+  },[isLogin])
   
   return (
     <div className="App">
       {/* {isLogin ? <Navigation isLogin={isLogin} state={state} setState={setState} setLogin={setLogin}/> : null} */}
-      <Navigation isLogin={isLogin} state={state} setState={setState} setLogin={setLogin}/>
+      <Navigation isLogin={isLogin}  setLogin={setLogin}/>
 
       <Routes>
         <Route path="/" element={<><Slider/> <Products/></>} />
@@ -36,7 +34,7 @@ function App() {
         <Route path="/contact" element={<Contact/>} />
         <Route path="/register" element={<> <Register/></>} />
         <Route path="/login" element={<> <Login setLogin={setLogin}/></>} />
-        <Route path="/productdetails/:id" element={<Productdetails/>} />
+        <Route path="/productdetails/:id" element={<><Productdetails/></>} />
         <Route path="/cart" element={isLogin === false ? <Login setLogin={setLogin}/> : <Cart/>} />
         <Route path="/payment" element={isLogin === false ? <Login setLogin={setLogin}/> : <Payment/>} />
         {/* <Route path="/" element={isLogin === false ? <Login setLogin={setLogin}/> : <><Slider/> <Products/></>} /> */}

@@ -6,7 +6,32 @@
     align-items: center;
     gap: 30px;
     overflow: auto;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;
+    
 }
+
+.empty_cart_container{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 2rem;
+    overflow: hidden;
+}
+
+.empty_cart_container img{
+    height: 60%;
+    width: 30%;
+}
+
+
+
+.cartDiv::-webkit-scrollbar {
+    display: none;
+  }
 
 .finalItemContainer{
     margin-top: 20px;

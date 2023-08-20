@@ -13,7 +13,7 @@ const Payment = () => {
     return state.itemCount;
   });
 
-  const ref = useRef(1)
+  const ref = useRef(0)
   const inCart = useSelector((state) => {
     return state.inCart;
   });
@@ -163,7 +163,7 @@ const Payment = () => {
                 ref.current = ref.current+sum
                 return (
                   <ListGroup.Item
-                  key={idx}
+                  key={item.id}
                     as="li"
                     className="d-flex justify-content-between align-items-start"
                   >

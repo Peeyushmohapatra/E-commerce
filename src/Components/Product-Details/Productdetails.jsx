@@ -4,23 +4,29 @@ import { Link, useParams } from "react-router-dom";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 import { useDispatch, useSelector } from "react-redux";
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { addToCart } from "../../Essentials/Carousellist";
 
 const Productdetails = () => {
   const { id } = useParams();
   const [data, setData] = useState("");
   const notify = () => toast("Added To Cart");
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   const state = useSelector((state) => {
     return state.product;
   });
 
+  async function getProduct(id) {
+    const reps = await fetch(`https://fakestoreapi.com/products/${id}`);
+    const json = await reps.json();
+    console.log(json);
+    setData(json);
+  }
 
   useEffect(() => {
-    getItem(id);
+    getProduct(id);
   }, []);
 
   const getItem = (id) => {
@@ -33,44 +39,53 @@ const Productdetails = () => {
     );
   };
 
-
-
-
   return (
     <>
       {data !== "" ? (
-        data.map((item) => {
-          return (
-            <div key={item.id} className="proctDetailsPage">
-              <div className="leftContainer">
-                <img src={item.image} alt="" />
-              </div>
-              <div className="rightContainer">
-                <h3>{item.category.toUpperCase()}</h3>
-                <br />
-                <h1>{item.title}</h1>
-                <br />
-                <h6>{Math.floor(item.rating.rate) === 5 ? "⭐⭐⭐⭐⭐" : Math.floor(item.rating.rate) === 4 ? "⭐⭐⭐⭐" : Math.floor(item.rating.rate) === 3 ? "⭐⭐⭐" : Math.floor(item.rating.rate) === 2 ? "⭐⭐" : "⭐"}</h6>
-                <br />
-                <h1><b>$ {item.price}</b></h1>
-                <br />
-                <p>{item.description}</p>
-                <br />
-                <div className="buttonContainer">
-                <button  onClick={() => {
-                notify()
-                addToCart(item,dispatch)
-
-              }} className="addtocart2">Add To Cart</button>
+        <div key={data.id} className="proctDetailsPage">
+          <div className="leftContainer">
+            <img src={data.image} alt="" />
+          </div>
+          <div className="rightContainer">
+            <h3>{data.category.toUpperCase()}</h3>
+            &nbsp;
+            <h2 className="title">{data.title}</h2>
+            &nbsp;
+            <h6>
+              {Math.floor(data.rating.rate) === 5
+                ? "⭐⭐⭐⭐⭐"
+                : Math.floor(data.rating.rate) === 4
+                ? "⭐⭐⭐⭐"
+                : Math.floor(data.rating.rate) === 3
+                ? "⭐⭐⭐"
+                : Math.floor(data.rating.rate) === 2
+                ? "⭐⭐"
+                : "⭐"}
+            </h6>
+            &nbsp;
+            <h1>
+              <b>$ {data.price}</b>
+            </h1>
+            &nbsp;
+            <p>{data.description}</p>
+            &nbsp;
+            <div className="buttonContainer">
+              <button
+                onClick={() => {
+                  notify();
+                  addToCart(data, dispatch);
+                }}
+                className="addtocart2"
+              >
+                Add To Cart
+              </button>
               <ToastContainer autoClose={1500} closeOnClickrtl={false} />
               <Link to="/cart">
-              <button className="gotoCartButton">Go To Cart</button>
+                <button className="gotoCartButton">Go To Cart</button>
               </Link>
-                </div>
-              </div>
             </div>
-          );
-        })
+          </div>
+        </div>
       ) : (
         <div className="proctDetailsPage">
           <div className="leftContainer">
@@ -99,4 +114,4 @@ const Productdetails = () => {
   );
 };
 
-export default memo(Productdetails);
+export default Productdetails;
