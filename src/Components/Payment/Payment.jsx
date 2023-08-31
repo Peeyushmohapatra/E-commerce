@@ -144,7 +144,7 @@ const Payment = () => {
             variant="secondary"
             size="lg"
           >
-            Block level button
+            Click to pay
           </Button>
         </div>
 

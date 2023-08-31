@@ -1,5 +1,5 @@
 .about{
-    height: 75.1vh;
+    min-height: 75.1vh;
     width: 100%;
     display: flex;
 }
@@ -38,4 +38,37 @@
 .rightSection img{
     height: 65%;
     width: 50%;
+}
+
+@media screen and (max-width : 500px) {
+    .about{
+       flex-direction:column-reverse;
+    }
+
+    .leftSection{
+        width: 100%;
+    }
+
+    .rightSection{
+        width: 100%;
+    }
+
+    .leftSection h1{
+        font-size: 0.9rem;
+    }
+    .leftSection {
+        font-size: 0.7rem;
+        font-weight: 600;
+    }
+
+    .leftSection a{
+        height: 40%;
+        width: 70%;
+    }
+    .leftSection a button{
+        height: 100%;
+        width: 100%;
+        font-size: 1rem;
+        font-weight: 700;
+    }
 }

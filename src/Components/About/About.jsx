@@ -22,7 +22,7 @@ const About = () => {
           praesentium commodi corporis tenetur reiciendis sint ipsa nam dicta?
           Accusamus fugit enim quas ducimus ipsa?
         </p>
-        <Link to="/contact">
+        <Link className="contact_us_button" to="/contact">
          <button>Contact Us</button>
         </Link>
 

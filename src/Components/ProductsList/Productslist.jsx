@@ -37,14 +37,16 @@ const Productslist = () => {
                 <b>$ {item.price}</b>
               </h4>
               <h6>{Math.floor(item.rating.rate) === 5 ? "⭐⭐⭐⭐⭐" : Math.floor(item.rating.rate) === 4 ? "⭐⭐⭐⭐" : Math.floor(item.rating.rate) === 3 ? "⭐⭐⭐" : Math.floor(item.rating.rate) === 2 ? "⭐⭐" : "⭐"}</h6>
+              <div className="buttons_container">
               <button  onClick={() => {
                 notify()
                 addToCart(item,dispatch)
               }} className="addtoCart">Add To Cart</button>
               <ToastContainer autoClose={1500} closeOnClickrtl={false} />
-              <Link to={`/productdetails/${item.id}`}>
+              <Link className="moreDetailsLink" to={`/productdetails/${item.id}`}>
               <button className="moreDetailsButton" >More Details</button>
               </Link>
+              </div>
             </div>
           );
         })

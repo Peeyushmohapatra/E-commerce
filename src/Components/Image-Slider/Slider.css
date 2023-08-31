@@ -17,3 +17,10 @@
     height: 100%;
     width: 100%;
 }
+
+
+@media screen and (max-width : 500px) {
+    .carousel{
+        height: 40vh;
+    }
+}
