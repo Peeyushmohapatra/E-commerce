@@ -19,8 +19,8 @@ function App() {
        
   const [isLogin,setLogin] = useState(JSON.parse(localStorage.getItem("isLogin")))
   useEffect(() => {
-    // isLogin === true ? localStorage.setItem("isLogin",JSON.stringify(true)) : localStorage.setItem("isLogin",JSON.stringify(false))
-    localStorage.setItem("isLogin",JSON.stringify(true))
+    isLogin === true ? localStorage.setItem("isLogin",JSON.stringify(true)) : localStorage.setItem("isLogin",JSON.stringify(false))
+    // localStorage.setItem("isLogin",JSON.stringify(true))
   },[isLogin])
   
   return (
