@@ -18,6 +18,15 @@
     width: 100%;
 }
 
+.carousel-caption{
+    text-align: center;
+    background-color: #00DBDE;
+background-image: linear-gradient(to right, #00DBDE 0%, #FC00FF 100%);
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+}
 
 @media screen and (max-width : 500px) {
     .carousel{

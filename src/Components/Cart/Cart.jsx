@@ -25,7 +25,6 @@ const Cart = () => {
       type: "add-to-cart1",
       data: ans,
     });
-    console.log(ans);
   }
 
   return (
@@ -65,8 +64,8 @@ const Cart = () => {
                     </div>
                   </div>
 
-                  <h3>{`${ref.current[item.id - 1]} x ${item.price} = $ ${(
-                    ref.current[item.id - 1] * item.price
+                  <h3>{`${ref.current[item.id - 1]} x ${(item.price * 82.72).toFixed(2)} = ₹ ${(
+                    ref.current[item.id - 1] * (item.price * 82.72).toFixed(2)
                   ).toFixed(2)}`}</h3>
                   <div
                     onClick={() => {

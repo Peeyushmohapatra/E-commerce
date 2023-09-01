@@ -7,7 +7,7 @@
     background: #000;
 }
 
-section{
+.sectionTag{
     display: flex;
     justify-content: center;
     align-items: center;

@@ -19,3 +19,8 @@
     align-items: center;
     justify-content: center;
 }
+
+.ripple ,.ripple-surface, .btn, .btn-primary, .btn-floating, .m-1{
+        height: 0;
+    width: 0!important;
+}

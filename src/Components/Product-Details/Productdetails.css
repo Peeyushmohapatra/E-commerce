@@ -6,15 +6,25 @@
 }
 
 .leftContainer{
-    height: 100%;
+    min-height: 90vh;
     width: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
+/* 
+.leftContainer span{
+    height: 70%;
+    width: 80%;
+}
+
+.react-loading-skeleton{
+    height: 100%;
+    width: 100%;
+} */
 
 .rightContainer{
-    height: 100%;
+    min-height: 100%;
     width: 50%;
     display: flex;
     flex-direction: column;
@@ -22,13 +32,14 @@
     padding: 1rem 2rem;
 }
 
+
 .leftContainer img{
     height: 60%;
     width: 60%;
 }
 
 .buttonContainer{
-    height: 8%;
+    height: 60px;
     width: 80%;
     display: flex;
     gap: 10px;
@@ -48,7 +59,7 @@
     font-size: 1.5rem;
 }
 
-a{
+.aLink{
     height: 100%;
     width: 30%;
 }
@@ -72,7 +83,7 @@ a{
     }
 
     .leftContainer{
-        height: 30%;
+        min-height: 30%;
         width: 100%;
         display: flex;
         justify-content: center;
@@ -85,7 +96,7 @@ a{
     }
 
     .rightContainer{
-        height: 70%;
+        min-height:100%;
         width:100%;
         display: flex;
         flex-direction: column;
@@ -108,11 +119,13 @@ a{
         text-align: center;
     }
     .rightContainer p{
-        text-align: center;
+        text-align: start;
+        font-size: 0.7rem;
+        font-weight: 600;
     }
 
     .buttonContainer{
-        height: 60px;
+        height: 70px;
         width: 100%;
         display: flex;
         /* gap: 10px; */

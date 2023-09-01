@@ -64,7 +64,7 @@ const Productdetails = () => {
             </h6>
             &nbsp;
             <h1>
-              <b>$ {data.price}</b>
+              <b>₹ {(data.price * 82.72).toFixed(2)}</b>
             </h1>
             &nbsp;
             <p>{data.description}</p>
@@ -80,7 +80,7 @@ const Productdetails = () => {
                 Add To Cart
               </button>
               <ToastContainer autoClose={1500} closeOnClickrtl={false} />
-              <Link to="/cart">
+              <Link className="aLink" to="/cart">
                 <button className="gotoCartButton">Go To Cart</button>
               </Link>
             </div>
@@ -89,7 +89,7 @@ const Productdetails = () => {
       ) : (
         <div className="proctDetailsPage">
           <div className="leftContainer">
-            <Skeleton width={700} height={400} />
+            <Skeleton width={400} height={400} />
           </div>
           <div className="rightContainer">
             <Skeleton width={"30%"} height={"150%"} />

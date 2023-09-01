@@ -27,10 +27,10 @@ const Navigation = ({isLogin,setLogin}) => {
 
   const navigate = useNavigate()
   return (
-    <div>
+    <div className='navbar'>
          <Navbar expand="lg" className="bg-body-tertiary">
       <Container fluid>
-        <Navbar.Brand href="#">
+        <Navbar.Brand>
           <img onClick={() => {
             navigate("/")
           }} id='site_logo' src={Logo} alt="" />

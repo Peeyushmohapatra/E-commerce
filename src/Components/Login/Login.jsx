@@ -43,7 +43,7 @@ const Login = ({ setLogin }) => {
 
   return (
     <div className="login_box_container">
-      <section>
+      <section className="sectionTag">
         <div className="login-box">
           <form action="">
             <h2>Login</h2>

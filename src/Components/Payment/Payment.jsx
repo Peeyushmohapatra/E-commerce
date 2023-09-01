@@ -159,7 +159,7 @@ const Payment = () => {
           <ListGroup as="ul">
             {inCart &&
               inCart.map((item,idx) => {
-                let sum = item.price * itemCount[(item.id)-1]
+                let sum = ((item.price * itemCount[(item.id)-1]) *  82.72)
                 ref.current = ref.current+sum
                 return (
                   <ListGroup.Item
@@ -172,7 +172,7 @@ const Payment = () => {
                       {itemCount[(item.id)-1]}
                     </div>
                     <Badge bg="primary" pill>
-                      {item.price.toFixed(1) * itemCount[(item.id)-1]} $
+                      {((item.price * itemCount[(item.id)-1]) * 82.72).toFixed(2)} ₹
                     </Badge>
                   </ListGroup.Item>
                 );
@@ -186,7 +186,7 @@ const Payment = () => {
                       
                     </div>
                     <Badge bg="primary" pill>
-                       {ref.current.toFixed(1)}$
+                       {ref.current.toFixed(2)} ₹
                     </Badge>
                   </ListGroup.Item>
           </ListGroup>

@@ -34,7 +34,7 @@ const Productslist = () => {
               />
               <h5>{item.title.substring(0,15)+"..."}</h5>
               <h4>
-                <b>$ {item.price}</b>
+                <b>₹ {(item.price * 82.72).toFixed(2)}</b>
               </h4>
               <h6>{Math.floor(item.rating.rate) === 5 ? "⭐⭐⭐⭐⭐" : Math.floor(item.rating.rate) === 4 ? "⭐⭐⭐⭐" : Math.floor(item.rating.rate) === 3 ? "⭐⭐⭐" : Math.floor(item.rating.rate) === 2 ? "⭐⭐" : "⭐"}</h6>
               <div className="buttons_container">

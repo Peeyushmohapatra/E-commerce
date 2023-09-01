@@ -41,7 +41,7 @@
 }
 
 .send_message {
-  height: 15%;
+  height: 60px;
   border: 2px solid rgb(43, 114, 253);
   color: rgb(43, 114, 253);
 }
